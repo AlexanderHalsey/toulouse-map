@@ -554,7 +554,7 @@ const VBYID={};
 VISITS.forEach(v=>v.id.split(';').filter(Boolean).forEach(i=>{(VBYID[i]=VBYID[i]||[]).push(v)}));
 const isDone=k=>!!VBYID[k];
 const OUT={left_cv:'CV laissé',apply_online:'postuler en ligne',apply_email:'postuler par mail',not_hiring:'ne recrute pas',
- no_access:'pas d\u2019accès',no_answer:'pas de réponse',lead:'piste',other:''};
+ no_access:'pas d\u2019accès',no_answer:'pas de réponse',gone:'pas à cette adresse',lead:'piste',other:''};
 function visitHTML(vs){return vs.map(v=>'<div class="vs"><b>'+esc(v.date||'')+'</b> '+esc(OUT[v.outcome]||'')+
  (v.note?'<br>'+esc(v.note):'')+(v.contact?'<br>'+v.contact.split(';').map(esc).join(' \u00b7 '):'')+'</div>').join('')}
 const PALETTE=['#d6336c','#e8590c','#a1690a','#2f9e44','#1971c2','#6741d9','#0c8599','#c2255c','#087f5b'];
